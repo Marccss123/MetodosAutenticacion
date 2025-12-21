@@ -63,19 +63,30 @@ public class Utilitario {
     }
 
     public void crearContratosProveedorCliente(String nombreCliente, String nombreProveedor, double precio, int duracioMeses){
-        for (ClienteEmpresa ce:listaClientesEmpresas){
-            if (ce.getNombre().equalsIgnoreCase(nombreCliente)){
-                if (ce.getListaProveedores().isEmpty()){
-                    System.out.println("No existen proveedores asociados con el cliente "+nombreCliente);
-                }else {
-                    for (Proveedor p: ce.getListaProveedores()){
-                        if (p.getNombre().equalsIgnoreCase(nombreProveedor)){
-                            p.agregarContrato(precio,duracioMeses);
-                        }
-                    }
+        ClienteEmpresa ce= buscarCliente(nombreCliente);
+
+        if (ce!=null){
+            if (ce.getListaProveedores().isEmpty()){
+                System.out.println("No existen proveedores asociados con el cliente "+nombreCliente);
+            }else {
+                Proveedor p=recorrerProveedores(ce,nombreProveedor);
+                if (p!=null){
+                    p.agregarContrato(precio,duracioMeses);
+                }
+                else{
+                    System.out.println("No se encontro el proveedor "+nombreProveedor);
                 }
             }
         }
+    }
+
+    public Proveedor recorrerProveedores(ClienteEmpresa ce, String nombreP){
+            for(Proveedor p:ce.getListaProveedores()){
+                if (p.getNombre().equalsIgnoreCase(nombreP)){
+                    return p;
+                }
+            }
+            return null;
     }
 
 
