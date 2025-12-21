@@ -1,24 +1,29 @@
-package proveedor;
+package proveedor.principales;
 
 public class Contrato {
     private double precio;
     private int duracionEnMeses;
+    private boolean activo;
 
     public Contrato(double precio, int duracionEnMeses) {
         this.precio = precio;
         this.duracionEnMeses = duracionEnMeses;
+        this.activo=true;
     }
 
     public double getPrecio() {return precio;}
     public int getDuracionEnMeses() {return duracionEnMeses;}
 
+    //Get solo regresa el estado
+    public boolean isActivo() {return activo;}
 
-    /*Se le pregunta al usuario si el contrato esta activo
-    respuesta solo de si o no, si es "Si o si" retornara true*/
+    //Metodo para cnacelar el contrato
+    public void cancelarContrato() {this.activo = false;}
 
-    public String estaActivo(String activo){
-        if ("si".equalsIgnoreCase(activo)){
-            return "Contrato activo";
+    //Metodos
+    public String estaActivo(){
+        if (activo){
+            return "Contrato Activo";
         }
         return "Contrato inactivo";
     }

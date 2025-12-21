@@ -1,6 +1,6 @@
 package proveedor.tipos;
 
-import proveedor.Proveedor;
+import proveedor.principales.Proveedor;
 
 //Tipo de proveedor: Representa proveedores de infraestructura en la nube
 public class ProveedorCloud extends Proveedor {
@@ -10,7 +10,7 @@ public class ProveedorCloud extends Proveedor {
     }
 
     @Override
-    public void tipoProveedor() {
-        System.out.println("El tipo de proveedor es: "+getTipo());
+    public String tipoProveedor() {
+        return "Proveedor Cloud";
     }
 }

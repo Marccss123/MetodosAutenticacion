@@ -2,7 +2,7 @@ package proveedor.tipos;
 
 //Representa proveedores de servicios de pago digital
 
-import proveedor.Proveedor;
+import proveedor.principales.Proveedor;
 
 public class ProveedorPasarelasPago extends Proveedor {
     public ProveedorPasarelasPago(String nombre, String pais) {
@@ -10,7 +10,7 @@ public class ProveedorPasarelasPago extends Proveedor {
     }
 
     @Override
-    public void tipoProveedor(){
-        System.out.println("El tipo de proveedor es: "+getTipo());
+    public String tipoProveedor(){
+        return "Proveedor Pasarelas Pago";
     }
 }

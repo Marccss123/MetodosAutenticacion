@@ -1,14 +1,12 @@
-package proveedor;
-
-import proveedor.Contrato;
+package proveedor.principales;
 
 import java.util.*;
 
 public abstract class Proveedor {
     private String nombre;
     private String pais;
-    private List<Contrato> listaContratos;
     private String tipo;
+    private List<Contrato> listaContratos;
 
     public Proveedor(String nombre, String pais, String tipo) {
         this.nombre = nombre;
@@ -30,6 +28,6 @@ public abstract class Proveedor {
         System.out.println("Contrato agregado");
     }
 
-    public abstract void tipoProveedor();
+    public abstract String tipoProveedor();
 
 }

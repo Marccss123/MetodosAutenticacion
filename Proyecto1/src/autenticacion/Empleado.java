@@ -104,7 +104,6 @@ public class Empleado {
             sb.append("   [No tiene métodos registrados]\n");
         } else {
             for (MetodoAuten metodo : autenticaciones) {
-                // Esto llama automáticamente al toString() de Huella, Token o Rostro
                 sb.append("   -> ").append(metodo.toString()).append("\n");
                 sb.append("      --------------------\n");
             }

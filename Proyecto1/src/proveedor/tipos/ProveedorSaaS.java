@@ -2,7 +2,7 @@ package proveedor.tipos;
 
 //Representa proveedores de software como servicio
 
-import proveedor.Proveedor;
+import proveedor.principales.Proveedor;
 
 public class ProveedorSaaS extends Proveedor {
     public ProveedorSaaS(String nombre, String pais) {
@@ -10,7 +10,7 @@ public class ProveedorSaaS extends Proveedor {
     }
 
     @Override
-    public void tipoProveedor() {
-        System.out.println("El tipo de proveedor es: "+getTipo());
+    public String tipoProveedor() {
+        return "Proveedor SaaS";
     }
 }

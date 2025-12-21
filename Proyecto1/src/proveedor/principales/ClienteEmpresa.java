@@ -1,7 +1,4 @@
-package proveedor;
-import proveedor.tipos.ProveedorCloud;
-import proveedor.tipos.ProveedorPasarelasPago;
-import proveedor.tipos.ProveedorSaaS;
+package proveedor.principales;
 
 import java.util.*;
 public class ClienteEmpresa {
@@ -29,7 +26,12 @@ public class ClienteEmpresa {
 
     public void imprimirContratosCliente(){
         for (Proveedor p:listaProveedores){
-            System.out.println(p.getListaContratos());
+            System.out.println("Proveedor: "+p.getNombre());
+            for (Contrato c: p.getListaContratos()){
+                if (c.isActivo()){
+                    System.out.println(c);
+                }
+            }
         }
     }
 
