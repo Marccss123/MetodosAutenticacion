@@ -104,5 +104,17 @@ public class Utilitario {
         System.out.println(sb.toString());
     }
 
+    public void menu(){
+        System.out.println("-----MENU-----");
+        System.out.println("1. Crear Proveedor");
+        System.out.println("2. Crear Cliente");
+        System.out.println("3. Asociar proveedores a los clientes");
+        System.out.println("4. Crear contratos entre proveedores y clientes");
+        System.out.println("5. Verificar si un cliente posee proveedores de un tipo determinado");
+        System.out.println("6. Listar todos los contratos activos del sistema");
+        System.out.println("7. Salir");
+        System.out.print("Ingresar opción: ");
+    }
+
 
 }
