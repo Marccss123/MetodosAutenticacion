@@ -112,16 +112,48 @@ public class MainProveedor {
                         //Buscamos cliente
                         ClienteEmpresa clienteEncontrado= u.buscarCliente(nombreCliente);
                         //Pedimos el tipo
-                        boolean verificacion;
-                        if (clienteEncontrado!=null){
-                            System.out.print("Ingrese el tipo de proveedor que desea buscar: ");
-                            tipo=Integer.parseInt(sc.nextLine());
-                            verificacion=clienteEncontrado.verificarProveedor(tipo);
+                        if (clienteEncontrado != null) {
+                            System.out.println("Seleccione el tipo de proveedor que desea buscar:");
+                            System.out.println("1. Cloud");
+                            System.out.println("2. SaaS");
+                            System.out.println("3. Pasarelas de Pago");
+                            System.out.print("Opción: ");
+                            tipo = Integer.parseInt(sc.nextLine());
+
+                            String tipoString = "";
+                            switch (tipo) {
+                                case 1: tipoString = "Proveedor Cloud"; break;
+                                case 2: tipoString = "Proveedor SaaS"; break;
+                                case 3: tipoString = "Proveedor Pasarelas Pago"; break;
+                                default: System.out.println("Opción no válida"); break;
+                            }
+
+                            // Solo si se eligió una opción válida, llamamos al metodo
+                            if (!tipoString.isEmpty()) {
+                                boolean tieneTipo = clienteEncontrado.verificarProveedor(tipoString);
+
+                                if (tieneTipo) {
+                                    System.out.println("El cliente SI tiene proveedores de tipo " + tipoString);
+                                } else {
+                                    System.out.println("El cliente NO tiene proveedores de tipo " + tipoString);
+                                }
+                            }
+                        } else {
+                            System.out.println("Cliente no encontrado.");
                         }
+                    }break;
+                    case 6:{
+                        u.listarContratosActivos();
+                    }break;
+                    case 7:{
+                        System.out.println("Saliendo del programa...");
+                    }break;
+                    default:{
+                        System.out.println("Opcion invalida. Por favor ingrese un numero del 1 al 7.");
                     }
                 }
 
-            }catch (InputMismatchException e){
+            }catch (InputMismatchException | NumberFormatException e){
                 System.out.println("Error: Debe ingresar un numero.");
                 u.menu();
                 sc.nextLine();
