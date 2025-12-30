@@ -43,7 +43,7 @@ public class MainProveedor {
                         tipo=Integer.parseInt(sc.nextLine());
 
                         //Crear Proveedor
-                        Proveedor nuevoProveedor= u.cr
+                        Proveedor nuevoProveedor=u.crearProveedor(nombreProveedor,pais, tipo)
 
                     }break;
                 }
