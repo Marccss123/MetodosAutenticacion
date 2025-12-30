@@ -2,7 +2,7 @@ package proveedor.interfaz;
 
 import proveedor.principales.ClienteEmpresa;
 import proveedor.principales.Proveedor;
-import proveedor.utilitario.Utilitario;
+import proveedor.util.Utilitario;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;

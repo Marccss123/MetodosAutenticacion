@@ -1,4 +1,4 @@
-package proveedor.utilitario;
+package proveedor.util;
 import proveedor.principales.ClienteEmpresa;
 import proveedor.principales.Proveedor;
 import proveedor.tipos.ProveedorCloud;
