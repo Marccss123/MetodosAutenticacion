@@ -1,8 +1,6 @@
 package proveedor;
 
-import jdk.jshell.execution.Util;
 import proveedor.principales.ClienteEmpresa;
-import proveedor.principales.Contrato;
 import proveedor.principales.Proveedor;
 import proveedor.utilitario.Utilitario;
 
@@ -13,10 +11,6 @@ import java.util.Scanner;
 
 public class MainProveedor {
     public static void main(String[] args) {
-        //Contrato-Atributos
-        double precio;
-        int duracionEnMeses;
-        boolean activo;
 
         //Proveedor-Atributos
         String nombreProveedor;
@@ -78,6 +72,10 @@ public class MainProveedor {
                         }
                     }break;
                     case 4:{
+                        //Contrato-Atributos
+                        double precio;
+                        int duracionEnMeses;
+
                         System.out.println("----CREAR CONTRATOS----");
                         System.out.print("Escriba el nombre de un cliente para buscar sus proveedores: ");
                         nombreCliente=sc.nextLine();
@@ -103,7 +101,7 @@ public class MainProveedor {
                         }else {
                             System.out.println("Error: Cliente no encontrado.");
                         }
-                    }
+                    }break;
                     case 5:{
                         System.out.println("\t----BUSCAR PROVEEDORES SEGUN SU TIPO----");
                         System.out.print("Escriba el nombre del cliente, para verificar sus proveedores: ");
