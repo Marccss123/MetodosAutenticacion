@@ -68,6 +68,7 @@ public class Utilitario {
 
     public String listarNombreAnioArranqueMotoXMarca(String marca){
         StringBuilder sb = new StringBuilder();
+        sb.append("----LISTA----\n");
         for(int i = 0; i < vehiculos.size(); i++){
             if (vehiculos.get(i).getMarca().equalsIgnoreCase(marca)) {
                 if (vehiculos.get(i) instanceof Moto){
@@ -81,6 +82,7 @@ public class Utilitario {
 
     public String listarAutomoviles(){
         StringBuilder sb = new StringBuilder();
+        sb.append("----LISTA DE AUTOMOVILES----\n");
         for (Vehiculo v: vehiculos){
             if (v instanceof  Auto){
                 Auto a = (Auto) v;
@@ -92,7 +94,7 @@ public class Utilitario {
 
     public String listaPropietarios(){
         StringBuilder sb =new StringBuilder();
-
+        sb.append("----LISTA DE PROPIETARIOS----\n");
         for(int i = 0; i < propietarios.size(); i++){
             sb.append(propietarios.get(i).toString());
             sb.append("\n");

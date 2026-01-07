@@ -46,7 +46,7 @@ public class MainSistemaVehiculos {
                     }
                     break;
                     case 2: {
-                        System.out.println("Ingrese su cedula: ");
+                        System.out.println("Escriba la cedula del propietario al que le va a asignar un Auto: ");
                         cedula = sc.nextLine();
                         Propietario p = u.buscarPropietario(cedula);
                         if (p != null) {
@@ -69,7 +69,7 @@ public class MainSistemaVehiculos {
                     }
                     break;
                     case 3: {
-                        System.out.println("Escriba la cedula del propietario al que le va a asignar un auto: ");
+                        System.out.println("Escriba la cedula del propietario al que le va a asignar una moto: ");
                         cedula = sc.nextLine();
                         Propietario p = u.buscarPropietario(cedula);
 
